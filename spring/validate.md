@@ -1,0 +1,23 @@
+- 검증을 어느 레이어, 객체에서 해야하는가?
+    - Dto : 빠르게 예외를 던질 수 있다.
+    - 도메인 : Dto에서 검증했어도 믿을 수 없다. 도메인이 가장 중요하므로 깨지면 안된다.
+        - 도메인 조건을 빠르게 파악할 수 있다. 테스트하기 쉽다.
+    - Service : 최대한 도메인에 위임하고 여러 도메인 간의 검증을 하자.
+    - Repository : 최후의 방어선으로 생각하자.
+
+- Request 검증 로직 순서
+    - 타입 변환 검증
+    - Valid 검증
+
+- `@Valid` vs `@Validated`
+    - `@Validated`
+        - 스프링 전용이다.
+        - 클래스에 `@Validated`
+        - AOP기반으로 컨트롤러가 아닌 계층에서도 검증이 가능하다.
+        - 유효성 검증에 실패할 경우 ConstraintViolationException이 발생한다.
+        - 내부에 groups 라는 기능을 포함하고 있다.(group보다 객체를 분리하는 것이 좋다.)
+    - `@Valid`
+        - 자바 표준 검증 애노테이션이다.(하지만 gradle 의존을 추가해야한다)
+        - 메소드에 `@Valid` 하나로 쉽게 검증할 수 있다. 
+        - ArgumentResolver에 의해 처리되므로 컨트롤러에서만 검증 가능하다
+        - 유효성 검증에 실패할 경우 MethodArgumentNotValidException이 발생한다.

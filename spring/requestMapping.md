@@ -1,0 +1,1 @@
+- GetMapping의 params 설정으로 쿼리파라미터를 받는 Get과 받지 않는 Get을 구분할 수 있다.
