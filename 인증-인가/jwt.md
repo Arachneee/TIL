@@ -6,7 +6,8 @@
             - registered : iss(발행자), exp(만료 시간), sub(대상), aud(대상) 등
             - public : 사용자 정의
             - private : 정보를 주고받기 위한 용도
-    - Signature : 메시지가 도중에 변경되지 않았는지 확인하는 데 사용된다
+    - Signature : 메시지가 도중에 변경되지 않았는지 확인하는 데 사용된다.
+        - Payload와 Header가 변경되면 같이 변경된다.
     - 장점 : 
         - JSON 기반으로 객체에 매핑하기 쉽다.
         - 인코딩 크기가 작다.
