@@ -22,3 +22,11 @@
 ```
 - DateTimeParseException 은 HttpMessageNotReadableException 로 변환되므로 HttpMessageNotReadableException의 부모타입에 의해 advice에서 잡힌다.
     - 하지만 HttpMessageNotReadableException의 부모타입이을 잡지 않는 경우 DateTimeParseException을 잡을 수 있다.(왜 잡을 수 있을까?)
+
+- WebMvcConfigure 에서 addViewController 로 설정한 view는 인터셉터에서 예외가 발생해도 왜 controllerAdvice의 ExceptionHandler에서 잡히지 않을까?
+    - 인터셉터에서 발생한 예외는 dispatcherServlet에서 잡아 `processHandlerException()`를 실행한다.
+    - `HandlerExceptionResolver` list 중에서 사용할 수 있는 resolver를 선택하여 수행한다.
+    - 그 중 controllerAdvice의 ExceptionHandler는 `ExceptionHandlerExceptionResolver`에서 수행된다.
+    - `ExceptionHandlerExceptionResolver`의 수행 조건이 Handler가 `HandlerMethod` 일 경우만 실행할 수 있다.
+    - 그런데 addViewController로 설정한 controller는 `HandlerMethod` 가 아니라 `ParameterizableViewController`이다.
+    - 그래서 ExceptionHandler에서 잡히지 않는다.

@@ -1,0 +1,3 @@
+- `@ConfigurationProperties` : yml을 class에 바인딩 시킬 수 있다.
+    - class를 사용하는 경우 : setter가 있어야 yml을 읽어온다. Component 등록이 가능하다.
+    - record를 사용하는 경우 : Component 등록이 불가능하다. 그래서 사용하는 쪽에서 `@EnableConfigurationProperties`로 직접 바인딩 시켜야한다.
