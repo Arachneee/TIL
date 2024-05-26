@@ -1,0 +1,4 @@
+- Pagination 과 Fetch join을 같이 사용하면 모든 레코드를 가져오는 쿼리가 실행되고 이후에 limit가 실행된다.
+- Page vs Slice
+	- Page는 count 쿼리를 통해 다음 페이지가 있는지 확인한다.
+	- Slice는 한 컬럼만 더 가져와서 다음페이지가 있는지 확인한다.

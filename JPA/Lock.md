@@ -1,0 +1,25 @@
+- 낙관적 락 (데이터베이스의 락 기능을 사용하지 않고 버전관리 기능을 사용한다.)
+	- NONE
+		- `@Version` 만 있어도 낙관적 락이 적용된다.
+		- 엔티티를 수정하면 버전을 체크한다.
+		- 먼저 수정한 트랜잭션만 수정된다. 수정하면 버전이 증가하기 때문이다.
+		- 다른 트랜잭션은 갱신을 분실하게 된다.
+	- OPTIMISTIC
+		- 낙관적 락 사용
+		- 엔티티를 조회할 때도 버전을 체크한다.
+		- 조회시점부터 트랜잭션이 끝날 때까지 조회한 엔티티가 변경되지 않음을 보장한다.
+		- DIRTY READ와 NON-REPEATABLE READ를 방지한다.
+	- OPTIMISTIC_FORCE_INCREMENT
+		- 낙관적 락 + 버전 정보 강제로 증가
+		- 연관관계가 있는 엔티티의 버전 정보도 업데이트 시킨다.
+		- 엔티티 묶음으로 버전을 관리할 수 있다.
+- 비관적 락 (데이터베이스의 락 기능을 사용한다.)
+	- PESSIMISTIC_READ
+		- 비관적 락, 읽기 락 사용
+		- for share
+	- PESSIMISTIC_WRITE
+		- 비관적 락, 쓰기 락 사용
+		- select for update
+	- PESSIMISTIC_FORCE_INCREMENT
+		- 비관적 락, 버전정보 강제로 증가
+		- for update nowait

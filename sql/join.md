@@ -25,3 +25,25 @@
     ON rt.id = r.time_id AND r.date = ? AND r.theme_id = ?
     ORDER BY start_at
     ```
+
+서브쿼리의 성능은 좋지 않다.
+- 서브쿼리를 inner join으로 풀 수 있다.
+```sql
+select 
+	w,
+	(select count(1)
+		from Waiting w2
+		where w2.reservation = w.reservation and w2.id <= w.id)
+from Waiting w
+where w.member = :member
+```
+
+```sql
+select w, count(1)
+from Waiting w  
+inner join Waiting w2  
+on w.member = :member
+and w.reservation = w2.reservation  
+where w2.id <= w.id  
+group by w.reservation
+```
