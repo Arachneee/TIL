@@ -4,3 +4,5 @@
         - PROPAGATION_REQUIRED_NEW : 무족건 독립적으로 새로 시작한다.
         - PROPAGATION_NOT_SUPPORTED : 트랜잭션이 없다.
     - 런타임 예외만 복구되고 체크 예외는 복구되지 않는다.
+
+![[Pasted image 20240530203018.png]]

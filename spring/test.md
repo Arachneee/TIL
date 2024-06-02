@@ -10,6 +10,16 @@
 - fake : 가짜 객체
     - Test에서 Fake 객체를 사용하면 유지보수하기 어려워진다. 
 - mock : 객체의 메소드를 호출을 했냐? 몇 번 호출했냐를 검증
+	- Mockito
+Void 반환 O
+```java
+doThrow(IllegalStateException.class).when(dictMock) .add(anyString(), anyString());
+```
+Void 반환 X
+```java
+when(dictMock.getMeaning(anyString())).thenThrow(NullPointerException.class);
+```
+
 
 - 테스트를 어디까지 해야할까?
     - 통합테스트, 서비스테스트, 레포지토리테스트를 전부 수행하면 중복되는 테스트가 매우 많아 진다.
@@ -25,6 +35,8 @@
 
     - 내 생각 순위 : 도메인 -> 서비스 -> 통합 -> 레포지토리
 
+- data.sql로 테스트 전체를 구성하면 유지보수에 좋지 않다.
+- 테스트 롤백하거나, 클린업하는 방법 말고도 다른 키를 사용하는 방법도 있다.
 
 - SpringBootTest
     - mock : 톰켓이 없고 통신이 dispatcher servlet으로 넘어감
