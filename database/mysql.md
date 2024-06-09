@@ -1,0 +1,3 @@
+- mysql은 group by 절에 포함되지 않은 컬럼을 select할 수 없다.
+	- 설정으로 혀용해주면 된다.
+	- https://dodo1054.tistory.com/230
