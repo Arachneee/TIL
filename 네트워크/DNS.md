@@ -15,3 +15,6 @@ DNS 조회의 8단계를 거쳐 example.com의 IP 주소가 반환되면, 이제
 
 10. 브라우저가 IP 주소로 [HTTP](https://www.cloudflare.com/learning/ddos/glossary/hypertext-transfer-protocol-http/) 요청을 보냅니다.
 11. 해당 IP의 서버가 브라우저에서 렌더링할 웹 페이지를 반환합니다(10단계).
+
+
+---
