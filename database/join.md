@@ -26,7 +26,7 @@
     ORDER BY start_at
     ```
 
-서브쿼리의 성능은 좋지 않다.
+서브쿼리의 성능은 좋지 않고 성능을 예측하기 어렵다.
 - 서브쿼리를 inner join으로 풀 수 있다.
 ```sql
 select 

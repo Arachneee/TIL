@@ -7,9 +7,7 @@
 	            - 쓰기 지연을 할 수 없다.
 	        - SEQUENCE : 데이터베이스 시퀀스를 사용해서 키 생성 (오라클에서 주로 사용), `@SequenceGenerator` 필요
 	            - IDENTITY와 다르게 INSERT하기 전에
-	            - `
-	                CREATE SEQUENCE MEMBER_SEQ START WITH 1 INCREMENT BY 1`
-	
+	            - `CREATE SEQUENCE MEMBER_SEQ START WITH 1 INCREMENT BY 1`
 	            같은 데이터베이스 시퀀스를 통해 ID값을 찾아 영속성 상태로 만든다.
 	            - flush()를 해야 INSERT 쿼리가 나간다. 
 	            - 쓰기 지연이 가능하다.
