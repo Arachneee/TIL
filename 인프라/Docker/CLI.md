@@ -12,3 +12,4 @@ docker run {이미지명}: 컨테이너 실행
 docker image ls : 이미지 목록 조회
 docker image inspect {이미지명} : 이미지의 세부 정보 조회
 docker container inspect {컨테이너명} : 컨테이너의 세부 정보 조회
+docker pull {} : 이미지 저장
