@@ -43,3 +43,10 @@ docker network ls : 네트워크 리스트 조회
 docker network inspect {네트워크명} : 네트워크 상세 정보 조회
 docker network create --driver bridge --subnet {서브넷 범위} --gateway {게이트웨이} {네트워크명} : 네트워크 생성
 docker network rm {네트워크명} : 네트워크 삭제
+
+docker run -v {도커의 볼륨명}:{컨테이너의 내부 경로}
+docker volume ls : 볼륨 리스트 조회
+docker volume inspect {볼륨명} : 볼륨 상세 정보 조회
+docker volume create {볼륨명} : 볼륨 생성
+docker volume rm {볼륨명} : 볼륨 삭제
+
