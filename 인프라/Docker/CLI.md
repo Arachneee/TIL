@@ -10,6 +10,8 @@ docker run {이미지명}: 컨테이너 실행
 	-p {HostOS의포트}:{컨테이너의포트}:포트포워딩
 	{실행 명령} : 메타데이터의 cmd 덮어 쓰기
 	--env KEY+VALUE 이미지명 : 메타데이터의 env 덮어쓰기
+	--cpus={CPU core수}
+	--memory={메모리용량}
 docker run -it --name {컨테이너명} {이미지명} bin/bash : 컨테이너 실행과 동시에 터미널 접속
 
 docker image ls : 이미지 목록 조회
@@ -50,3 +52,12 @@ docker volume inspect {볼륨명} : 볼륨 상세 정보 조회
 docker volume create {볼륨명} : 볼륨 생성
 docker volume rm {볼륨명} : 볼륨 삭제
 
+docker stats {컨테이너명/ID} : 컨테이너의 리소스 사용량 조회
+docker events : HOST OS에서 발생하는 이벤트 로그 조회
+
+---
+docker compose up -d : 서비스(컨테이너) 생성 및 시작
+docker compose ps : 현재 실행중인 서비스 상태 표시
+docker compose build : 현재 실행중인 서비스의 이미지만 빌드
+docker compose logs : 실행중인 서비스의 로그 표시
+docker compose down : YAML 파일에 정의된 서비스 종료 및 제거
