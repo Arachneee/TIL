@@ -55,6 +55,9 @@ docker volume rm {볼륨명} : 볼륨 삭제
 docker stats {컨테이너명/ID} : 컨테이너의 리소스 사용량 조회
 docker events : HOST OS에서 발생하는 이벤트 로그 조회
 
+docker image prune -a : 미사용 이미지 제거
+
+
 ---
 docker compose up -d : 서비스(컨테이너) 생성 및 시작
 docker compose ps : 현재 실행중인 서비스 상태 표시
