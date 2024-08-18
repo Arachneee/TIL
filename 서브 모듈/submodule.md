@@ -1,0 +1,6 @@
+- git submodule add {프라이빗 저장소 url}  {받아올 저장소 위치} : 서브 모듈 추가
+- git pull --recurse-submodule origin dev
+- git submodule init : 초기화
+- git submodule update : 메인 모듈에 기록된 서브모듈 최신으로 변경
+- git submodule update --remote : 서브모듈의 default 브랜치 최신으로 변경
+- 커밋 푸쉬할 때 main 브랜치의 최신 상태에서(pull) 커밋, 푸쉬를 해야 충돌이 안난다.
