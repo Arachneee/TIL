@@ -251,6 +251,7 @@ docker를 사용한 이유는 운영서버와 개발서버의 환경을 동일�
 - 몇번의 3-way hand shake 가 있어야 ssl 연결을 할 수 있을까요? => 7번이라고 함  
 - CA 인증서는 어떤 역할을 하나요?  
 - 깃 브랜치 전략에 대해서 그림을 그리며 설명해주세요.
+- WAS와 웹서버의 차이는 뭔지?
 - **![:사과:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f34e.png)** **줍줍할 태도** **![:사과:](https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-medium/1f34e.png)**  
 - 질문의 의도가 맞는지 묻는 태도  
 - 잠시 생각을 정리하겠다는 시간을 갖겠다는 말  
