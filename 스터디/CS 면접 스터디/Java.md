@@ -1,0 +1,9 @@
+- 컴파일 언어와 인터프리터 언어의 혼합
+	- 바이트코드로 컴파일 한 후 실행
+- 컴파일 언어
+	- C, C++, Go, Rust, Swift
+- 인터프리터 언어
+	- Python
+	- JavaScript
+	- Ruby
+	- PHP
