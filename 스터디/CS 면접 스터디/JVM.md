@@ -29,3 +29,16 @@
 	- JRE를 포함하여 javac, javadoc 등이 있다.
 - JRE
 	- JVM + 자바 라이브러리
+
+```
+public class A {
+	static int name = 3;
+	static B b = new B();
+
+	int password = 4;
+	public void method(int param) {
+		int c = 7;
+		D d = new D();
+	}
+}
+```
