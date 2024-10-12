@@ -23,4 +23,43 @@ for (int i = 0; i < n; i++) {
 int asInt = Arrays.stream(dp).max().getAsInt();
 ```
 
-- 풀이 2 :
+- 풀이 2 : 이분 탐색 O(nlogn)
+	- LIS[] : 최장 증가 부분 수열을 의미하지 않는다. 길이만 유효하다.
+```
+int[] arr = new int[n];  
+  
+for (int i = 0; i < n; i++) {  
+    arr[i] = Integer.parseInt(br.readLine());  
+}  
+  
+int[] lis = new int[n];  
+Arrays.fill(lis, Integer.MAX_VALUE);  
+  
+lis[0] = arr[0];  
+int count = 1;  
+for (int i = 1; i < n; i++) {  
+    int now = arr[i];  
+  
+    if (lis[count - 1] < now) {  
+        lis[count++] = now;  
+        continue;  
+    }  
+    if (lis[0] > now) {  
+        lis[0] = now;  
+        continue;  
+    }  
+  
+    int left = 0;  
+    int right = count;  
+  
+    while (left + 1 < right) {  
+        int mid = (left + right) / 2;  
+        if (now > lis[mid]) {  
+            left = mid;  
+        } else {  
+            right = mid;  
+        }  
+    }  
+    lis[right] = now;  
+}
+```
